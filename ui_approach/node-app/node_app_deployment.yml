@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: node-app
-        image: azhardanish9/node-docker-k8s:latest
+        image: azhardanish9/simple-express-app:3.0
         ports:
         - containerPort: 3015
         resources:
