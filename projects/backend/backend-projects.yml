@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: backend
+  namespace: argocd            # Must be deployed in the ArgoCD namespace
+spec:
+  description: Project for backend team apps
+  sourceRepos:                 # Allowed Git source repositories
+    - https://github.com/azhar-danish/argocd-demos.git
+  destinations:                # Allowed target destinations for backend workloads
+    - namespace: backend       # Aligned to backend namespace
+      server: https://172.31.8.148:33893
+  clusterResourceWhitelist:    # Grants permission to manage cluster-wide objects
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:  # Grants permission to manage namespace resources
+    - group: "*"
+      kind: "*"
+  roles:                       # RBAC configurations for the backend team
+    - name: backend-admins  
+      description: Admins for backend team
+      policies:
+        # Format: p, proj:<project>:<role>, <resource>, <action>, <project>/<object>, <effect>
+        - p, proj:backend:backend-admins, applications, *, backend/*, allow
