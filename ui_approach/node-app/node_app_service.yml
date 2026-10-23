@@ -6,5 +6,5 @@ spec:
   selector:
     app: node-app
   ports:
-    - port: 3015  
-      targetPort: 3015
+    - port: 3000  
+      targetPort: 3000
