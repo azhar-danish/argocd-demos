@@ -16,7 +16,7 @@ spec:
   source:
     repoURL: https://github.com/azhar-danish/argocd-demos.git # Git repository containing the app manifests
     targetRevision: main # Git branch, tag, or commit to track
-    path: projects/backend/app # Path within the repo where manifests are located
+    path: projects/backend/apps # Path within the repo where manifests are located
   destination:
     server: https://172.31.8.148:33893 # Kubernetes API server address (in-cluster)
     namespace: default # Namespace where the app will be deployed
