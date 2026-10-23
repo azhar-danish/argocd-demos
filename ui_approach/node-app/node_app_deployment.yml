@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: node-app
-        image: azhardanish9/my-mew-express-app:1.0
+        image: azhardanish9/node-docker-k8s:latest
         ports:
         - containerPort: 3000
         resources:
